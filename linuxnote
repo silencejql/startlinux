@@ -1,0 +1,65 @@
+安装Ubuntu：
+    1：ext4：10~20G
+    2：swap：物理内存的1~2倍 
+    3：boot：200M
+    4：home：越大越好
+更新源：
+    sudo apt-get update
+	下载工具：
+        apt-get install wget下载工具
+        curl抓取工具
+        vim编辑器
+mac主题
+    #添加源
+    add-apt-repository ppa:noobslab/macbuntu
+    # 更新源
+    apt-get update
+    # 下载图标
+    apt-get install macbuntu-os-icons-lts-v7
+    # 下载主题
+    apt-get install macbuntu-os-ithemes-lts-v7
+    # 卸载命令
+    cd /usr/share/icons/mac-cursors && sudo ./uninstall-mac-cursors.sh
+
+    apt-get remove macbuntu-os-icons-lts-v7 macbuntu-os-ithemes-lts-v7
+安装 Slingscold：
+    apt-get install slingscold
+安装Albert Spotlight：
+    apt-get install albert
+安装 Plank Dock：
+# 安装plank
+    apt-get install plank
+# 安装plank主题
+    apt-get install macbuntu-os-plank-theme-lts-v7
+ 替换面板上的Ubuntu Desk：
+    cd && wget -O Mac.po http://drive.noobslab.com/data/Mac/change-name-on-panel/mac.po
+
+# 还原默认
+    cd && wget -O Ubuntu.po http://drive.noobslab.com/data/Mac/change-name-on-panel/ubuntu.po
+修改启动器的logo：
+    wget -O launcher_bfb.png http://drive.noobslab.com/data/Mac/launcher-logo/apple/      launcher_bfb.png
+    mv launcher_bfb.png /usr/share/unity/icons/
+# 恢复默认
+    wget -O launcher_bfb.png http://drive.noobslab.com/data/Mac/launcher-logo/ubuntu/launcher_bfb.png
+    mv launcher_bfb.png /usr/share/unity/icons/
+
+安装修改工具：
+    apt-get install unity-tweak-tool
+    apt-get install gnome-tweak-tool
+更改鼠标指针速度：xset m N(0~10).
+安装vim：sudo apt-get install vim-gtk
+																			翻墙：
+    更改hosts：
+	    1：https://laod.cn/hosts/2017-google-hosts.html 下载hosts文件
+	    2：解压后替换文件
+            cd ./Downloads
+            mv -f hosts /etc/hosts
+        3：sudo rcnscd restart
+	例如：
+	    谷歌学术：https://scholar.google.com/
+	    谷歌：https://www.google.com/ncr
+	    谷歌香港：https://www.google.com.hk/ncr
+	    Twitter：https://twitter.com/?lang=zh-cn
+
+pwd:显示路径
+
