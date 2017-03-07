@@ -53,6 +53,7 @@ mac主题
 	    1：https://laod.cn/hosts/2017-google-hosts.html 下载hosts文件
 	    2：解压后替换文件
             cd ./Downloads
+
             mv -f hosts /etc/hosts
         3：sudo rcnscd restart
 	例如：
@@ -63,4 +64,6 @@ mac主题
 
 pwd:显示路径
 
-add test
+git remote add origin git@github.com:silencejql/helloTest.git
+
+测试pus
