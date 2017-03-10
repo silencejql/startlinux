@@ -66,4 +66,14 @@ pwd:显示路径
 
 git remote add origin git@github.com:silencejql/helloTest.git
 
+迅雷启动：
+    systemctl --user start xwared
+关闭迅雷：
+    systemctl --user stop xwared
+
+root占用大：
+    1.dpkg --get-selections |grep linux-image查看内核
+    2.sudo apt-get purge linux-image-3.5.0-17-generic清理内核
+    3.uname -a查看当前使用内核
+
 测试pus
