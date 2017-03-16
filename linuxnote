@@ -76,4 +76,22 @@ root占用大：
     2.sudo apt-get purge linux-image-3.5.0-17-generic清理内核
     3.uname -a查看当前使用内核
 
-测试pus
+如果Vim不支持Python2，提示错误：
+    若没有Python2则安装：
+        sudo apt-get install vim-nox-py2
+    查看支持版本：
+        vim --version
+    若不是+Python：
+        sudo update-alternatives --config vim
+    选择版本即可
+Python中使用汉字编码：
+    在文件前面加：
+        #！/usr/bin/python
+        #coding:utf-8
+    全局方法：
+        在Python的lib\site-packages文件夹下新建sitecustomize.py
+        或者在etc/Python2.7文件夹下的sitesustomize.py中添加
+            #encoding=utf8
+            import sys  
+            reload(sys)  
+            sys.setdefaultencoding('utf8')  
