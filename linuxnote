@@ -95,3 +95,29 @@ Python中使用汉字编码：
             import sys  
             reload(sys)  
             sys.setdefaultencoding('utf8')  
+安装杀毒软件clamav
+    sudo apt-get install clamav
+    更新病毒库：
+        sudo freshclam
+        可能会出现问题或者说更新完后不能查杀
+    手动更新病毒库：
+        1：先检查freshclam.conf文件下的DatabaseDirectory /var/lib/clamav之前
+        的注释符号#是否删除。
+        2：在官网下载最新的三个文件
+            main.cvd-------http://database.clamav.net/main.cvd
+            daily.cvd------http://database.clamav.net/daily.cvd
+            bytecode.cvd---http://database.clamav.net/bytecode.cvd
+        3：下载完后讲文件保存到路径 /var/lib/clamav 下。
+        4：再次运行 sudo freshclam 显示病毒库为最新。
+    扫描病毒：
+        扫描所有用户的主目录就使用 clamscan -r /home
+        扫描您计算机上的所有文件并且显示所有的文件的扫描结果，就使用
+    clamscan -r /
+        扫描您计算机上的所有文件并且显示有问题的文件的扫描结果，
+    clamscan -r --bell -i /
+    删除病毒：
+        扫描时加 --remove
+    设置自动扫描病毒：
+        export EDITOR=gedit && sudo crontab -e选择编辑器
+        在文件的最后一行加入：
+            00 00 * * * sudo clamscan -r /location_of_files_or_folders
