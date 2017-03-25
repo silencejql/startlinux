@@ -3,12 +3,14 @@
     2：swap：物理内存的1~2倍 
     3：boot：200M
     4：home：越大越好
+
 更新源：
     sudo apt-get update
 	下载工具：
         apt-get install wget下载工具
         curl抓取工具
         vim编辑器
+
 mac主题
     #添加源
     add-apt-repository ppa:noobslab/macbuntu
@@ -46,8 +48,11 @@ mac主题
 安装修改工具：
     apt-get install unity-tweak-tool
     apt-get install gnome-tweak-tool
+
 更改鼠标指针速度：xset m N(0~10).
+
 安装vim：sudo apt-get install vim-gtk
+
 翻墙教程：
     更改hosts：
 	    1：https://laod.cn/hosts/2017-google-hosts.html 下载hosts文件
@@ -76,6 +81,7 @@ mac主题
             255.255.255.255 broadcasthost
             ::1 localhost
             fe80::1%lo0 localhost
+
 pwd:显示路径
 
 git remote add origin git@github.com:silencejql/helloTest.git
@@ -98,6 +104,7 @@ root占用大：
     若不是+Python：
         sudo update-alternatives --config vim
     选择版本即可
+
 Python中使用汉字编码：
     在文件前面加：
         #！/usr/bin/python
@@ -109,6 +116,7 @@ Python中使用汉字编码：
             import sys  
             reload(sys)  
             sys.setdefaultencoding('utf8')  
+
 安装杀毒软件clamav
     sudo apt-get install clamav
     更新病毒库：
@@ -135,3 +143,12 @@ Python中使用汉字编码：
         export EDITOR=gedit && sudo crontab -e选择编辑器
         在文件的最后一行加入：
             00 00 * * * sudo clamscan -r /location_of_files_or_folders
+
+清理垃圾：
+    删除已经卸载掉的软件包：
+        sudo　apt-get autoclean
+    删除全部安装包：
+        sudo　apt-get clean
+    删除卸载软件时残留的系统垃圾：
+        sudo　apt-get autoremove
+
