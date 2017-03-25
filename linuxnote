@@ -48,7 +48,7 @@ mac主题
     apt-get install gnome-tweak-tool
 更改鼠标指针速度：xset m N(0~10).
 安装vim：sudo apt-get install vim-gtk
-																			翻墙：
+翻墙教程：
     更改hosts：
 	    1：https://laod.cn/hosts/2017-google-hosts.html 下载hosts文件
 	    2：解压后替换文件
@@ -61,7 +61,21 @@ mac主题
 	    谷歌：https://www.google.com/ncr
 	    谷歌香港：https://www.google.com.hk/ncr
 	    Twitter：https://twitter.com/?lang=zh-cn
-
+    可能遇到的问题：
+        1：sudo:rcnscd:command not found
+            安装nscd：
+                sudo apt-get install ncsd
+            启动ncsd：
+                sudo /etc/init.d/nscd restart
+        2：sudo:无法解析主机：hyc-csu
+            sudo gedit /etc/hosts
+            添加127.0.1.1 hyc-csu(主机名$HOSTNAME)
+            #Localhost(DO NOT REMOVE)
+            127.0.0.1 localhost
+            127.0.1.1 hyc-csu
+            255.255.255.255 broadcasthost
+            ::1 localhost
+            fe80::1%lo0 localhost
 pwd:显示路径
 
 git remote add origin git@github.com:silencejql/helloTest.git
