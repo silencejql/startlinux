@@ -152,3 +152,18 @@ Python中使用汉字编码：
     删除卸载软件时残留的系统垃圾：
         sudo　apt-get autoremove
 
+查看系统用户：
+    who
+
+查看系统运行时间：
+    uptime
+tty1~6不支持中文显示：
+    安装fbterm
+    1：sudo apt-get install fbterm
+    2：修改fbtermrc文件
+        sudo vim .fbtermrc
+            更改汉字编码
+                text-encodings=utf8
+    3：启动fbterm
+        sudo fbterm
+
