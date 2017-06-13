@@ -10,7 +10,6 @@
         apt-get install wget下载工具
         curl抓取工具
         vim编辑器
-
 mac主题
     #添加源
     add-apt-repository ppa:noobslab/macbuntu
@@ -61,12 +60,15 @@ mac主题
 
             mv -f hosts /etc/hosts
         3：sudo rcnscd restart
+	可能遇到的问题：对于systemd发行版使用：
+		         sudo systemctl restart NetworkManager
+			systemctl enable NetworkManager-dispatcher.service
 	例如：
 	    谷歌学术：https://scholar.google.com/
 	    谷歌：https://www.google.com/ncr
 	    谷歌香港：https://www.google.com.hk/ncr
 	    Twitter：https://twitter.com/?lang=zh-cn
-    可能遇到的问题：
+    
         1：sudo:rcnscd:command not found
             安装nscd：
                 sudo apt-get install ncsd
