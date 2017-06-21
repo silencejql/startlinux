@@ -51,6 +51,7 @@ mac主题
 更改鼠标指针速度：xset m N(0~10).
 
 安装vim：sudo apt-get install vim-gtk
+配置vim：见fork。
 
 翻墙教程：
     更改hosts：
