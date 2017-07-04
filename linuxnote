@@ -119,6 +119,19 @@ Python中使用汉字编码：
             import sys  
             reload(sys)  
             sys.setdefaultencoding('utf8')  
+	    
+Python切换版本：
+    安装：
+        sudo apt-get install virtualenvwrapper
+        sudo pip install virtualenvwrapper
+	
+    切换版本
+        mkvirtualenv -p /usr/bin/python2 env27
+	mkvirtualenv -p /usr/bin/python3.4 env34
+	
+	workon env27  # 进入Python2环境
+        workon env34  # 进入Python3环境
+
 
 安装杀毒软件clamav
     sudo apt-get install clamav
