@@ -131,7 +131,12 @@ Python切换版本：
 	
 	workon env27  # 进入Python2环境
         workon env34  # 进入Python3环境
-
+	
+   第二种方法：
+        sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 100
+        sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 150
+       
+        sudo update-alternatives --config python
 
 安装杀毒软件clamav
     sudo apt-get install clamav
