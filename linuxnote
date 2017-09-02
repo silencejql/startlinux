@@ -75,7 +75,7 @@ mac主题
                 sudo apt-get install ncsd
             启动ncsd：
                 sudo /etc/init.d/nscd restart
-        2：sudo:无法解析主机：hyc-csu
+        2：sudo:无法解析主机：hyc-csu　主要原因是主机名不对，改为自己计算机的名字
             sudo gedit /etc/hosts
             添加127.0.1.1 hyc-csu(主机名$HOSTNAME)
             #Localhost(DO NOT REMOVE)
@@ -87,6 +87,11 @@ mac主题
 
 pwd:显示路径
 
+ｒｍ　删除文件
+ｒｍ　－ｆ　删除文件夹
+
+随心所欲的复制
+　　sudo nautilus
 git remote add origin git@github.com:silencejql/helloTest.git
 
 迅雷启动：
@@ -188,3 +193,15 @@ tty1~6不支持中文显示：
     3：启动fbterm
         sudo fbterm
 
+安装搜狗输入法
+　　sudo apt-get update
+　　sudo apt-get install gdebi
+  在安装包目录下
+  　　sudo gdebi sogoupinyin_2.0.0.0078_amd64.deb
+  如果出现不能输入中文
+  　　killall fcitx 
+　　　killall sogou-qinpanel
+   　然后，删除配置文件，重启搜狗
+　　　ubuntu下搜狗的配置文件在 ~/.config下的3个文件夹里：
+　　　SogouPY、SogouPY.users、sogou-qimpanel
+   删除后重启搜狗
