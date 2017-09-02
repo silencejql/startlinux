@@ -205,3 +205,27 @@ tty1~6不支持中文显示：
 　　　ubuntu下搜狗的配置文件在 ~/.config下的3个文件夹里：
 　　　SogouPY、SogouPY.users、sogou-qimpanel
    删除后重启搜狗
+
+配置显卡
+
+  卸载N卡驱动
+    sudo apt-get remove --purge nvidia*
+    
+  安装Bumblebee
+    1. sudo add-apt-repository ppa:bumblebee/stable
+    2. sudo apt-get update
+    3. sudo apt-get install bumblebee virtualgl linux-headers-generic
+    
+  验证效果
+    lspci |grep VGA
+    
+    终端返回类似如下两条信息：
+    
+    A、00:02.0 VGA compatible controller: Intel Corporation 3rd Gen Core processor Graphics Controller (rev 09)
+    B、01:00.0 VGA compatible controller: NVIDIA Corporation GK104M [GeForce GTX 670MX] (rev ff)"
+    其中，A条信息关于I卡，"rev 09“表示I卡运作；B条信息关于N卡，”rev ff“表示N卡被关闭，若未被关闭，显示为“rev a1”
+    
+  调用N卡工作
+    命令“optirun xxx"可用来调用N卡运作处理程序xxx（程序名）的图形计算 ，不过图形渲染仍由I卡负责
+    
+    
