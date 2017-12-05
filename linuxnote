@@ -279,4 +279,10 @@ tty1~6不支持中文显示：
   关闭无线网卡的监控模式
     airmon-ng stop wlan0mon
 
+debian安装shadowsocks
+    使用root用户登录，运行以下命令：
+
+    wget --no-check-certificate -O shadowsocks-libev-debian.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-libev-debian.sh
+chmod +x shadowsocks-libev-debian.sh
+./shadowsocks-libev-debian.sh 2>&1 | tee shadowsocks-libev-debian.log
   
